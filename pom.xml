@@ -36,7 +36,7 @@
 			            <muleVersion>4.3.0</muleVersion>
 			            <username>ricky02022021</username>
 			            <password>Ricky2021</password>
-			            <applicationName>mulesoft-cicd-sample1</applicationName>
+			            <applicationName>dw2</applicationName>
 			            <environment>Sandbox</environment>
 			            <workerType>MICRO</workerType>
 			            <objectStoreV2>true</objectStoreV2>
