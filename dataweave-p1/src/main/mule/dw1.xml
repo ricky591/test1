@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<sub-flow name="dw1Sub_Flow" doc:id="d9c8c5ce-372e-4521-b781-8fc04980b1a2" >
+		<choice doc:name="Choice" doc:id="d51933ea-80e9-4015-a3bd-9c7de78ef36c" >
+			<when expression="#[attributes.queryParams.name == 'map']">
+				<ee:transform doc:name="Transform Message" doc:id="379c2e6d-7b71-4e3e-be46-f6835fcc8fbe" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	Message : "you have reached map operations
+"
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+
+			</when>
+			<otherwise >
+				<ee:transform doc:name="Transform Message" doc:id="8af6e4e8-ec2a-4eb7-ae96-c426a18dcfdb" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	Message : "you have reached default block"
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</otherwise>
+		</choice>
+	</sub-flow>
+</mule>

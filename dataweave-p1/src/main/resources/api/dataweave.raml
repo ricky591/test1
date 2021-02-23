@@ -1,0 +1,23 @@
+#%RAML 1.0
+title: dataweave
+version: 1.0.0
+baseUri: http://localhost:8081/
+
+documentation:
+  - title: Dataweave Practice
+    content: |
+       Practice all the dataweave related topics.
+
+traits:
+  client-enforcement: !include ./security/secure.trait.raml
+
+/source:
+  /dw:
+    is: [client-enforcement]
+    get:
+      responses: 
+        200:
+          description: Request was successful
+          body:
+            application/json:
+                example: !include example/dwResponse.json

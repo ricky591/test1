@@ -1,0 +1,16 @@
+#%RAML 1.0 Trait
+
+usage: Apply this trait to any api that need client_id and client_secret enforcement
+
+headers:
+  client_id:
+    description: Client ID
+    type: string
+    example: abcd
+    required: true
+    
+  client_secret:
+    description: Client Secret
+    type: string
+    example: abcd
+    required: true
