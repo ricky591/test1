@@ -30,6 +30,16 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+					<cloudHubDeployment>
+			            <uri>https://anypoint.mulesoft.com</uri>
+			            <muleVersion>4.3.0</muleVersion>
+			            <username>ricky02022021</username>
+			            <password>Ricky2021</password>
+			            <applicationName>mulesoft-cicd-sample1</applicationName>
+			            <environment>Sandbox</environment>
+			            <workerType>MICRO</workerType>
+			            <objectStoreV2>true</objectStoreV2>
+			        </cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
